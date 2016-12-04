@@ -3,7 +3,7 @@ body{
 }
 /*换皮肤需要换*/
 .header{
-    background: url(../images/header-bg.jpg) no-repeat 0px 0px;
+    background: url(../Images/header-bg.jpg) no-repeat 0px 0px;
     position: relative;
     border-bottom: 5px solid #E8432E;
     background-size: 100% 100%;
@@ -32,7 +32,7 @@ body{
     width: 40px;
     height: 40px;
     display: block;
-    background: url(../images/image-sprite.png) no-repeat -3px -124px;
+    background: url(../Images/image-sprite.png) no-repeat -3px -124px;
     cursor:pointer;
     position: absolute;
     right:100px;
