@@ -2,58 +2,60 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-        }
-        .cat{
-            width: 127px;
-            height: 102px;
-            overflow: hidden;
-            position: absolute;
-            left:1000px;
-            top:50px;
-        }
-        img{
-            position: absolute;
-            left:0;
-            top:0;
-        }
-    </style>
-    <script src="js/jquery-1.7.2.js"></script>
-    <script>
-        $(function(){
-            var timer=null;
-            $('#cat').animate({
-                left:50,
-                easing:'linear'
-            },10000)
-            var n=0;
-            timer=setInterval(function(){
-                n++;
-                if(n>7){
-                    n=0;
-                    $('img').css({
-                        left:0
-                    })
-                };
-                document.title=n+','+$('img').position().left;
-                $('img').css({
-                    left:-n*127
-                })
-            },100)
-        })
-    </script>
+    <title>新仔主页</title>
+    <link href="stylesheets/base.css" rel="stylesheet" />
+    <link href="Images/xinzai.png" rel="Shortcut Icon" />
+    <script typet="text/javascript" src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+    <link href="stylesheets/self.css" rel="stylesheet" />
+    <script src="js/home.js"></script>
+
 </head>
 <body>
-<div class="cat" id="cat">
-    <img src="Images/page4_03.png" alt="" />
-    <h2>你愁啥！</h2>
+<div class="all">
+    <div class="header clearfix">
+        <div class="top_header">
+            <a href="http://xinzai2014.github.io/index"><h2>xinzai2014.github.io/index</h2></a>
+            <p>欢迎进入王连新空间</p>
+            <a href="javascript:;" class="header_a" id="header_a">
+                <span class="header_d"> </span>
+                <span class="header_x">请您欣赏</span>
+            </a>
+        </div>
+        <div class="nav-icon" id="nav-icon"></a>
+        </div>
+
+        <div class="form_content" id="form_content">
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="javascript:;">个人信息</a></li>
+                <li><a href="#">作品</a></li>
+                <li><a href="#">联系</a></li>
+            </ul>
+            <span></span>
+        </div>
+
+    </div>
+    <div class="warper">
+        <div class="content_one" id="content_one">
+            <h2 class="title"><span></span>个人信息</h2>
+            <div class="lun">
+                <div class="owl_btn">
+                    <div class="owl_prev"></div>
+                    <div class="owl_next"></div>
+                    <ul>
+                        <li>
+
+                        </li>
+                        <li></li>
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
 </div>
-<div>
-    嘿嘿嘿 小猫猫 走啊走
-</div>
+
 </body>
 </html>
