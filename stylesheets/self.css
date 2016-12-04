@@ -147,5 +147,78 @@ body{
 .owl_next:hover{
     opacity: 0.5;
 }
+.lun_y{
+    width: 1007px;
+    height:280px;
+    overflow: hidden;
+    position: relative;
+}
+.lun ul{
+    padding-top: 50px;
+    position: absolute;
+}
+.lun ul li{
+    width: 1007px;
+    height: 230px;
+    float: left;
+}
+.lun .owl_l{
+    margin-top:10px;
+    margin-left: 20px;
+    width:50%;
+    float: left;
+}
+.lun .owl_l p{
+    margin-bottom:20px;
+    line-height:30px;
+    font-size: 20px;
+}
+/*换主题需要*/
+.lun .owl_r{
+    padding:0 5px;
+    width: 40%;
+    float: left;
+    background:#E8432E;
+    border-radius: 20px;
+}
+.lun .owl_r p{
+    padding-top:10px;
+    margin-bottom:10px;
+    line-height:25px;
+    font-size: 16px;
+    color:#fff;
+    font-weight: bold;
+}
+/*换主题用到*/
+.show_one{
+    padding-left:30px;
+    height: 100%;
+    background: #E8432E;
+    border-radius: 20px;
+}
+.show_one p{
+    padding-top:10px;
+    margin-bottom:10px;
+    line-height:25px;
+    font-size: 16px;
+    color:#fff;
+    font-weight: bold;
+}
+.opus{
+    margin-top:100px;
+    width:100%;
+}
+/*换主题用*/
+.opus_header{
+    width: 100%;
+    background:#E8432E;
+}
+.opus_header h2{
+    padding:4em 0 ;
+    color:#fff;
+}
+.opus_header h2 span{
+    background: #fff;
+}
 
 
