@@ -15,9 +15,7 @@ ul, ol, dl{
     height:500px;
     overflow: hidden;
 }
-body{
-    height:5000px;
-}
+
 /*换皮肤需要换*/
 .header{
     background: url(../Images/header-bg.jpg) no-repeat;
@@ -178,7 +176,7 @@ body{
     background:url(../Images/image-sprite.png) no-repeat -2px -194px;
 }
 .content_one{
-    padding-top:30px;
+    padding:30px 0;
 }
 /*多次使用*/
 .content_one .title{
@@ -387,7 +385,26 @@ body{
     top: 50%;
     margin-top: -32px;
 }
-li { list-style: none; }
+#RotatePic li { list-style: none; overflow: hidden}
+#RotatePic .pic_int{
+    height:70%;
+    width:100%;
+    position: absolute;
+    top:0;
+    left: -100%;
+    color:#E8432E;
+    text-align:center;
+    z-index: 1;
+    background-color:rgba(234,234,234,0.5) ;
+}
+
+#RotatePic li a em{
+    margin:50px 34%;
+    height:65px;
+    width: 65px;
+    display:inline-block;
+    background: url("../Images/icon-eye.png") no-repeat;
+}
 img { border: none; }
 #RotatePic { margin-left:5%; width: 90%; height: 440px; position: relative; border-radius:10px;background:url("../Images/zhuanhuan_bg.jpg") no-repeat -50% 100%;background-size:100% 100%; overflow: hidden; }
 #RotatePic li { width: 208px; height: 340px; position: absolute; text-align: center;}
@@ -417,10 +434,178 @@ img { border: none; }
     margin-left: -93px;
     width: 187px;
     height: 214px;
-    border-radius:10px;
     background: #000;
     position: absolute;
     top:20px;
     left:50%;
 }
 /**********************html作品3d转换**************************/
+/*********动态js作品***********/
+.jingtai{
+    display: none;
+}
+.jing_active{
+    display: block;
+}
+.dongtai{
+    margin-left: 5%;
+    width: 90%;
+    height: 440px;
+    position: relative;
+    border-radius: 10px;
+    background-size: 100% 100%;
+    overflow: hidden;
+}
+.dongtai ul{
+    width:150px;
+    height:150px;
+    background:#ccc;
+    float:left;
+    position:relative;
+    overflow:hidden;
+    margin:30px 20px;
+}
+.dongtai ul li{
+    position:absolute;
+    left:0;
+    top:-150px;
+    width:150px;
+    height:150px;
+    background:#6cf;
+}
+.texiao_pos{
+    position: relative;
+}
+/*********联系我************/
+.contect_form{
+    text-align: center;
+}
+/******换主题用*******/
+
+.contect_form input{
+    padding-left:2px;
+    margin-top:20px;
+    width: 70%;
+    heihgt:40px;
+    font-size: 20px;
+    font-style: italic;
+    line-height: 40px;
+    border-radius:5px;
+    color:#000;
+    outline: none;
+    border:1px solid #E8432E;
+}
+.contect_form textarea{
+    padding:0 2px;
+    margin-top:20px;
+    width: 70%;
+    heihgt:40px;
+    font-size: 20px;
+    font-style: italic;
+    line-height: 30px;
+    border-radius:5px;
+    color:#000;
+    outline: none;
+    resize: none;
+    border:1px solid #E8432E;
+}
+.contect_form .send{
+    width: 30%;
+    height:40px;
+    background-color:#E8432E;
+    background: url("../Images/overlay-button.png") no-repeat;
+    color:#fff;
+    -webkit-animation-duration:1s ;
+    -webkit-animation-name:redPulse;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+}
+@-webkit-keyframes redPulse {
+    from {
+        background-color: #BB3B2B;
+        -webkit-box-shadow: 0 0 10px #BB3B2B;
+    }
+    50% {
+        background-color: #E8432E;
+        -webkit-box-shadow: 0 0 20px #E8432E;
+    }
+    to {
+        background-color: #BB3B2B;
+        -webkit-box-shadow: 0 0 10px #BB3B2B;
+    }
+
+}
+
+
+
+
+
+
+/***************页面底部***************/
+.public_foot{
+    padding-top:20px;
+    background: #E8432E;
+}
+.public_foot h2{
+    color: #fff;
+    line-height: 30px;
+    font-weight: bold;
+}
+.public_foot p{
+    color: #fff;
+    font-size: 20px;
+    line-height: 30px;
+}
+.wechat{
+    padding-top:120px;
+    width:100px;
+    background: url("../Images/IMG_1175.png") no-repeat;
+    -webkit-background-size:100px 100px;
+    background-size:100px 100px ;
+    float: left;
+    color: #fff;
+    font-size:20px;
+    text-align: center;
+}
+.qqchat{
+    margin-left: 50px;
+    padding-top:120px;
+    width:100px;
+    background: url("../Images/IMG_1176.png") no-repeat;
+    -webkit-background-size:100px 100px;
+    background-size:100px 100px ;
+    float: left;
+    color: #fff;
+    font-size:20px;
+    text-align: center;
+}
+.public_foot{
+    margin-top:50px;
+}
+.public_foot .copy_i{
+    text-align: center;
+    font-size:12px;
+}
+
+/*********随屏幕变字体大小************/
+@media screen and (max-width: 750px){
+    .contect_form .send{
+        font-size:16px;
+    }
+    .public_foot h2{
+        font-size: 20px;
+    }
+    .public_foot p{
+        font-size: 14px;
+    }
+    .top_header h2{
+        font-size:40px;
+    }
+    .top_header p{
+        font-size:20px;
+    }
+    .content_two p{
+        font-size:12px;
+        line-height: 12px;
+    }
+}

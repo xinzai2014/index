@@ -36,6 +36,9 @@ $(function(){
         $('#form_content ul li').eq(2).click(function () {
             $('html,body').animate({scrollTop: $('#opus').offset().top}, 1600);
         })
+        $('#form_content ul li').eq(3).click(function () {
+            $('html,body').animate({scrollTop: $('#contact_foot').offset().top}, 1600);
+        })
         $('#header_a').click(function () {
             $('html,body').animate({scrollTop: $('#content_one').offset().top}, 800);
         })
@@ -174,6 +177,22 @@ $(function(){
         var aLi=oUl.children;
         var oPos=document.getElementById('gv_bg');
 
+        function getByClass(oParent,sClass){
+            if(!oParent.getElementsByClassName){
+                return oParent.getElementsByClassName(sClass);
+            }
+            else{
+                var regx = new RegExp('\\b'+sClass+'\\b','g');
+                var aElt = oParent.getElementsByTagName('*');
+                var arr = [];
+                for(var i = 0; i<aElt.length;i++){
+                    if(regx.test(aElt[i].className)){
+                        arr.push(aElt[i]);
+                    }
+                }
+                return arr;
+            }
+        }
         var left=oUl.offsetWidth*0.04;
         for(var i=0; i<aLi.length-1; i++){
             aLi[i].onmouseover=function (){
@@ -182,15 +201,23 @@ $(function(){
 
             aLi[i].onmouseout=function (){
                 doMove(oPos,{left:left});
-
             };
             aLi[i].onclick=function (){
                 left=this.offsetLeft;
                 $(this).addClass('gv_on').siblings('li').removeClass('gv_on');
-                doMove(oPos,{left:left});
 
+                $('.jingtai').eq($(this).index()).css('display','block').siblings('div').css('display','none');
+                doMove(oPos,{left:left});
             };
         }
+        //html\js切换
+
+
+
+
+
+
+
     })();
     //html作品3d转换效果
     (function(){
@@ -222,6 +249,13 @@ $(function(){
         aA[5].onclick=function (){
             return false;
         };
+        aLi[1].onmouseenter=function(){
+            $('.pic_int').eq($(this).index()).animate({left:0});
+        }
+        aLi[1].onmouseleave=function(){
+            $('.pic_int').eq($(this).index()).animate({left:'-100%'});
+        }
+
         //存位置和图片信息
         var aPos=[];
         for(var i=0; i<aLi.length; i++){
@@ -232,7 +266,9 @@ $(function(){
                 imgW:getStyle(aImg[i],'width'),
                 imgO:getStyle(aImg[i],'opacity'),
                 imgT:getStyle(aImg[i],'top'),
-                fnClick:aA[i].onclick
+                fnClick:aA[i].onclick,
+                intEn:aLi[i].onmouseenter,
+                intLea:aLi[i].onmouseleave
             });
         }
 
@@ -243,6 +279,8 @@ $(function(){
                 aLi[i].style.zIndex=aPos[i].zIndex;
                 doMove(aImg[i],{opacity:aPos[i].imgO,top:aPos[i].imgT,width:aPos[i].imgW});
                 aA[i].onclick=aPos[i].fnClick;
+                aLi[i].onmouseenter=aPos[i].intEn;
+                aLi[i].onmouseleave=aPos[i].intLea;
             }
         }
         function right(){
@@ -252,10 +290,110 @@ $(function(){
                 aLi[i].style.zIndex=aPos[i].zIndex;
                 doMove(aImg[i],{opacity:aPos[i].imgO,top:aPos[i].imgT,width:aPos[i].imgW});
                 aA[i].onclick=aPos[i].fnClick;
+                aLi[i].onmouseenter=aPos[i].intEn;
+                aLi[i].onmouseleave=aPos[i].intLea;
             }
         }
         oBtn1.onclick=left;
         oBtn2.onclick=right;
+
+    })();
+    //穿墙效果展示js
+    (function(){
+        function getPos(obj){
+            var l = 0;
+            var t = 0;
+            while(obj){
+                l += obj.offsetLeft;
+                t += obj.offsetTop;
+
+                obj = obj.offsetParent;
+            }
+            return {left:l,top:t};
+        }
+
+        function getDir(obj,ev){
+            var oColPos=document.getElementById('col_pos');
+            var oBox=document.getElementById('dongtai')
+            var x=obj.offsetLeft+obj.offsetWidth/2+oBox.offsetLeft+oColPos.offsetLeft-ev.clientX;
+            var y=(getPos(obj).top-document.body.scrollTop)+obj.offsetHeight/2-ev.clientY;
+            document.title=ev.clientY;
+            //Math.atan2(y,x)  	角度
+            //*180/Math.PI		角度转弧度
+            //+180 				变成360
+            // /90				求数字 0 - 4之间
+            //Math.round 		四舍五入 0 1 2 3 4
+            // %4				结果 0 1 2 3
+            return Math.round((Math.atan2(y,x)*180/Math.PI+180)/90)%4;
+        }
+        function through(obj){
+            var oLi=obj.children[0];
+
+            obj.onmouseenter=function (ev){
+                var oEvent=ev||event;
+                var dir=getDir(obj,oEvent);
+                switch(dir){
+                    case 0:
+                        oLi.style.left='150px';
+                        oLi.style.top=0;
+                        break;
+                    case 1:
+                        oLi.style.left=0;
+                        oLi.style.top='150px';
+                        break;
+                    case 2:
+                        oLi.style.left='-150px';
+                        oLi.style.top=0;
+                        break;
+                    case 3:
+                        oLi.style.left=0;
+                        oLi.style.top='-150px';
+                        break;
+                }
+                move(oLi,{left:0,top:0});
+            };
+            obj.onmouseleave=function (ev){
+                var oEvent=ev||event;
+                var dir=getDir(obj,oEvent);
+
+                switch(dir){
+                    case 0:
+                        move(oLi,{left:150,top:0});
+                        break;
+                    case 1:
+                        move(oLi,{left:0,top:150});
+                        break;
+                    case 2:
+                        move(oLi,{left:-150,top:0});
+                        break;
+                    case 3:
+                        move(oLi,{left:0,top:-150});
+                        break;
+                }
+            };
+        }
+        window.onload=function (){
+            var oBox=document.getElementById('dongtai')
+            var aUl=oBox.getElementsByTagName('ul');
+
+            for(var i=0; i<aUl.length; i++){
+                through(aUl[i],oBox);
+            }
+        };
+    })();
+
+
+
+        //联系处
+    (function(){
+        $('.contect_form input,#message ').focus(function(){
+            $(this).css('boxShadow','0 0 20px #E8432E');
+        })
+        $('.contect_form input, #message').blur(function(){
+            $(this).css('boxShadow','');
+        });
+
+
     })()
 
 })

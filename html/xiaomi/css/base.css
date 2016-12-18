@@ -1,0 +1,50 @@
+*{
+	margin:0;
+	padding:0;
+}
+body{
+	font:14px/1.5 "Helvetica Neue",Helvetica,Arial,"Microsoft Yahei","Hiragino Sans GB","Heiti SC","WenQuanYi Micro Hei",sans-serif;
+}
+h1, h2, h3, h4, h5, h6{
+    font-weight:normal;	
+	font-size: 12px;	
+}
+i{
+	font-style: normal;
+}
+b{
+	font-weight: normal;
+}
+a{
+	text-decoration: none;
+	color:#6d6d6d;
+	font-size: 12px;
+}
+img{
+	display:block;
+	border:0;
+}
+ul, ol, dl{
+	list-style:none;
+}
+.clearfix:after{
+	display:block;
+	content: "";
+	clear:both;
+}
+.clearfix{
+	zoom:1;
+}
+input{
+	outline: none;
+	font-size: 12px;
+}
+textarea{
+	resize: none;
+	font-size: 12px;
+}
+select{
+	outline: none;
+}
+
+

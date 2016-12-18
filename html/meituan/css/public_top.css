@@ -1,0 +1,265 @@
+/**********公共头1*****************/
+/**********公共头1*****************/
+.w_public_top_t{
+	height:30px;
+	line-height: 30px;
+	border-bottom: 1px solid #dfdfdf;
+	background: #f5f5f5;
+	color:#666;
+}
+.w_public_top_one{
+	margin:0 auto;
+	width:1200px;
+}
+.w_public_top_one_s{
+	width:980px;
+}
+.w_public_top_onel{
+	float: left;
+}
+.w_public_top_onel span, .w_public_top_onel i{
+	margin-right:15px;
+	float:left;
+}
+.w_public_top_onel .w_shoujilogo{
+	padding-left:14px;
+	background: url(../images/w_shoujilogo.png) no-repeat 0 5px;
+}
+.w_shoujilogo:hover{
+	background: url(../images/w_shouji_h.png) no-repeat 0 5px;
+}
+.w_public_top_one b{
+	width:6px;
+	height:3px;
+	vertical-align: middle;
+	background: url(../images/w_icon1.png) no-repeat 0 -18px;
+	display: inline-block;
+}
+.w_public_top_oner{
+	float: right;
+}
+.w_public_top_oner span, .w_public_top_oner i,  .w_public_top_oner a{
+	float:left;
+}
+.w_public_top_oner i{
+	margin:0 8px;
+}
+.w_topdingdan{
+	margin-right:22px;
+}
+.w_public_top_oner .w_gouwuchelogo{
+	padding-left:26px;
+	background: url(../images/w_gouwuchelogo.png) no-repeat 4px 8px;
+}
+.w_gouwuchelogo em{
+	font-style: normal;
+	color:#f76120;
+}
+/*************************公共头1***********************************/
+
+/***************************公共头2************************************/
+.w_public_top_two{
+	margin:0 auto;
+	width:1200px;
+	height:152px;
+}
+.w_public_top_two_s{
+	width:980px;
+}
+.w_head_one{
+	width:1200px;
+	height:100px;
+}
+.w_head_one_s{
+	width:980px;
+}
+.w_meituanlogo{
+	margin-top:22px;
+	width:82px;
+	height:54px;
+	text-indent: -9999em;
+	float: left;
+	background:url(../images/w_icon1.png) no-repeat -23px 0;
+}
+.w_meituanlogo a{
+	display: block;
+	height:100%;
+}
+.w_city{
+	margin:25px 0 0 10px;
+	width:60px;
+	height:49px;
+	float: left;
+}
+.w_city p{
+	padding-left:1px;
+	line-height: 27px;
+	font-size: 16px;
+	color:#000;
+}
+.w_city a{
+	width:58px;
+	height:20px;
+	line-height: 20px;
+	font-size:12px;
+	display: inline-block;
+	color:#999;
+	text-align: center;
+	border:1px solid #eee;	
+}
+.w_head_cent{
+	margin:26px 0 0 148px;
+	width:593px;
+	height:74px;
+	float: left;
+}
+.w_head_cent_s{
+	margin-left:92px;
+	width:496px;
+}
+.w_head_search{
+	width:593px;
+	height:46px;
+}
+.w_head_search_s{
+	width:496px;
+}
+.w_head_search_l{
+	width:508px;
+	height:40px;
+	float: left;
+	border:3px solid #2db8ad;
+	border-right:0;
+}
+.w_head_search_l_s{
+	width:411px;
+}
+.w_head_search_ll{
+	width:62px;
+	height:40px;
+	line-height: 40px;
+	text-align: center;
+	font-size: 14px;
+	color:#666;
+	background: #fafafa;
+	border-right:1px solid #ddd;
+	cursor: pointer;
+	float: left;
+}
+.w_head_search_ll b{
+	width:6px;
+	height:3px;
+	vertical-align: middle;
+	background: url(../images/w_icon1.png) no-repeat 0 -18px;
+	display: inline-block;
+}
+.w_inp{
+	width:445px;
+	height:40px;
+	border:0;
+	font-size: 14px;
+	color:#757575;
+	float: left;
+}
+.w_inp_s{
+	width:348px;
+}
+.w_but_one{
+	width:82px;
+	height:46px;
+	background: #2db8ad;
+	font-size: 14px;
+	color:#fff;
+	float: left;
+	border: 0;
+	cursor:pointer;
+}
+.w_head_cent p{
+	line-height:28px;
+}
+.w_head_cent p a{
+	margin-right:15px;
+}
+.w_head_r{
+	margin-top:28px;
+	height:49px;
+	float: right;
+}
+.w_head_r_box{
+	height:49px;
+	float: left;
+}
+.w_head_r_box .w_suishi{
+	margin:0 auto;
+	width:22px;
+	height:24px;
+	display:block;
+	background: url(../images/w_icon1.png) -109px 0;
+}
+.w_head_r_box_s{
+	padding:0 14px;
+	line-height:25px;
+	font-size: 12px;
+	color:#989898;
+}
+.w_miandan{
+	margin:0 auto;
+	width:22px;
+	height:24px;
+	display:block;
+	background: url(../images/w_icon1.png) -133px 0;
+}
+.w_guoqi{
+	margin:0 auto;
+	width:24px;
+	height:24px;
+	display:block;
+	background: url(../images/w_icon1.png) -157px 0;
+}
+.w_head_two{
+	margin-top:12px;
+	width:1200px;
+	height:38px;
+}
+.w_head_two_s{
+	width:980px;
+}
+.w_fenlei{
+	padding-left:17px;
+	width:198px;
+	height:38px;
+	line-height: 38px;
+	font-size: 14px;
+	font-weight: bold;
+	color:#fff;
+	background: #2bb8aa;
+	float: left;
+}
+.w_head_two_menu{
+	padding:4px 0 0 15px;
+	width:750px;
+	height:34px;
+	line-height: 34px;
+	font-weight: bold;
+	float: left;
+}
+.w_head_two_menu a{
+	margin:0 15px;
+	font-size:14px;
+	color:#333px;
+}
+.w_head_th{
+	width:1200px;
+	height:2px;
+}
+.w_head_th_s{
+	width:980px;
+}
+.w_head_th_l{
+	margin-right:12px;
+	width:980px;
+	border-bottom:2px solid #2bb8aa;
+	float: left;
+}
+
+/***************************公共头2************************************/
