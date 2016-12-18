@@ -562,7 +562,7 @@ img { border: none; }
     background: url("../Images/IMG_1175.png") no-repeat;
     -webkit-background-size:100px 100px;
     background-size:100px 100px ;
-    float: left;
+    float: right;
     color: #fff;
     font-size:20px;
     text-align: center;
@@ -574,7 +574,7 @@ img { border: none; }
     background: url("../Images/IMG_1176.png") no-repeat;
     -webkit-background-size:100px 100px;
     background-size:100px 100px ;
-    float: left;
+    float: right;
     color: #fff;
     font-size:20px;
     text-align: center;
