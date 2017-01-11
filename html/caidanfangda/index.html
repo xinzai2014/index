@@ -1,0 +1,75 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="author" content="智能社 - zhinengshe.com" />
+<meta name="copyright" content="智能社 - zhinengshe.com" />
+<meta name="description" content="智能社是一家专注于web前端开发技术的公司，目前主要提供JavaScript培训和HTML5培训两项服务，同时还推出了大量javascript基础知识教程，智能课堂为你带来全新的学习方法和快乐的学习体验。" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<title>智能社— http://www.zhinengshe.com</title>
+<style>
+div{ position:absolute; bottom:0; width:100%; text-align:center; }
+img{ width:64px; }
+a{font-size: 30px;
+	background: #6cf;
+	font-weight:bold;
+	text-decoration: none;
+}
+</style>
+<script>
+window.onload=function (){
+	var oBox=document.getElementById('box');
+	var aImg=oBox.getElementsByTagName('img');
+	var aInp=document.getElementsByTagName('input');
+	
+	document.onmousemove=function (ev){
+		var oEvent=ev||event;
+		for(var i=0; i<aImg.length; i++){
+			//元素中心点距离-鼠标距离=边
+			var a=(aImg[i].offsetLeft+aImg[i].offsetWidth/2+oBox.offsetLeft)-oEvent.clientX;
+			var b=(aImg[i].offsetTop+aImg[i].offsetHeight/2+oBox.offsetTop)-oEvent.clientY;
+			//勾股定理
+			var c=Math.sqrt(a*a+b*b);
+			//c/500=求出比1小的值，1-为了中间的值最大
+			var scale=1-c/500;
+			//限制范围
+			if(scale<0.5)scale=0.5;
+			aImg[i].style.width=scale*128+'px';
+		}
+	};
+};
+</script>
+</head>
+
+<body>
+<a href="iPhoneimg/demo.html">模仿iphone查看图片</a>
+	<div id="box">
+    	<img src="images/1.png" alt="" />
+    	<img src="images/2.png" alt="" />
+    	<img src="images/3.png" alt="" />
+    	<img src="images/4.png" alt="" />
+    	<img src="images/5.png" alt="" />
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

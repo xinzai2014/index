@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>智能社--http://www.zhinengshe.com</title>
+    <style>
+        *{margin:0; padding:0; list-style:none;}
+
+        ul li{float:left; width:300px; height:300px; border:1px solid #000;}
+        ul li img{width:100%; height:100%;}
+    </style>
+    <script src="../../js/jquery-1.7.2.js"></script>
+    <script>
+        $(function(){
+            function show(){
+                var scrollB = $(window).height() + $(document).scrollTop();
+                $('img').each(function(index,element){
+                    if($(this).offset().top <= scrollB){
+                        $(this).attr('src',$(this).attr('_src'));
+                    }
+                });
+            }
+            show();
+            $(document).scroll(show);
+            $(window).resize(function(){
+                show();
+            });
+        });
+    </script>
+</head>
+<body>
+<ul>
+    <li><img _src="img/b1.jpg" /></li>
+    <li><img _src="img/b2.jpg" /></li>
+    <li><img _src="img/b3.jpg" /></li>
+    <li><img _src="img/b4.jpg" /></li>
+    <li><img _src="img/b5.jpg" /></li>
+    <li><img _src="img/b6.jpg" /></li>
+    <li><img _src="img/b7.jpg" /></li>
+    <li><img _src="img/b8.jpg" /></li>
+    <li><img _src="img/b9.jpg" /></li>
+    <li><img _src="img/b10.jpg" /></li>
+</ul>
+</body>
+</html>

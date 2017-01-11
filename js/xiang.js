@@ -21,9 +21,11 @@ $(function(){
     //伸处目录
 
 
+
+
     (function() {
         $('#nav-icon').click(function () {
-            doMove($('#form_content').get(0),{top:0},{duration:2000});
+            doMove($('#form_content').get(0), {top: 0}, {duration: 2000});
         })
         $('#form_content span').click(function () {
             $('#form_content').animate({
@@ -44,101 +46,110 @@ $(function(){
         })
         //播放器
         //图标变化
-        var timer=0;
-        var n=0;
-        timer=setInterval(function(){
+        var timer = 0;
+        var n = 0;
+        timer = setInterval(function () {
             video_do();
-        },500)
-        function video_do(){
+        }, 500)
+        function video_do() {
             n++;
-            if(n%2){
+            if (n % 2) {
                 $('#video-up').show();
                 $('#video-down').hide();
-            }else{
+            } else {
                 $('#video-up').hide();
                 $('#video-down').show();
             }
         }
+
         //播放暂停
-        $('#video-btn').click(function(){
+        $('#video-btn').click(function () {
             $('#video-off').show();
             $(this).hide();
-            $('#Music').get(0).muted=true;
+            $('#Music').get(0).muted = true;
             clearInterval(timer);
-            n=0;
+            n = 0;
         })
-        $('#video-off').click(function(){
+        $('#video-off').click(function () {
             $('#video-btn').show();
             $(this).hide();
-            $('#Music').get(0).muted=false;
-            timer=setInterval(function(){
+            $('#Music').get(0).muted = false;
+            timer = setInterval(function () {
                 video_do();
-            },500)
+            }, 500)
         })
         //联系效果
-        $('.contact_do').mouseover(function(){
-            for(var i=0;i<$('.contact_do').length;i++){
-                $('.contact_tubiao').css({border:0,opacity:1})
-                $('.contact_content').css({display:'none'})
+        $('.contact_do').mouseover(function () {
+            for (var i = 0; i < $('.contact_do').length; i++) {
+                $('.contact_tubiao').css({border: 0, opacity: 1})
+                $('.contact_content').css({display: 'none'})
             }
             $('.contact_tubiao').eq($(this).index()).css({
-                border:'5px solid #E8432E',
-                borderBottom:0,
-                borderTopLeftRadius:10,
-                borderTopRightRadius:10,
-                opacity:0.8,
+                border: '5px solid #E8432E',
+                borderBottom: 0,
+                borderTopLeftRadius: 10,
+                borderTopRightRadius: 10,
+                opacity: 0.8,
 
             });
-            $('.contact_content').eq($(this).index()).css({display:'block'})
+            $('.contact_content').eq($(this).index()).css({display: 'block'})
         })
-        $('.contact_do').mouseout(function(){
+        $('.contact_do').mouseout(function () {
             $('.contact_tubiao').eq($(this).index()).css({
-                border:0,
-                opacity:1
+                border: 0,
+                opacity: 1
             });
-            $('.contact_content').eq($(this).index()).css({display:'none'})
+            $('.contact_content').eq($(this).index()).css({display: 'none'})
         })
         //到顶部
-        $('#to_top').click(function(){
-            $('html,body').animate({scrollTop:0},1000)
+        $('#to_top').click(function () {
+            $('html,body').animate({scrollTop: 0}, 1000)
         })
         //首页等的移入移出效果
-        $('#form_content li a').hover(function(){
-            for(var i=0;i<$(this).children('div').length;i++){
-                $(this).children('div').eq(i).css({borderWidth:1});
+        $('#form_content li a').hover(function () {
+            for (var i = 0; i < $(this).children('div').length; i++) {
+                $(this).children('div').eq(i).css({borderWidth: 1});
             }
-            $(this).children('div').eq(0).stop().animate({width:150});
-            $(this).children('div').eq(1).stop().animate({height:100});
-            $(this).children('div').eq(2).stop().animate({width:150});
-            $(this).children('div').eq(3).stop().animate({height:100});
-        },function(){
-            var _this=this;
-            $(this).children('div').eq(0).stop().animate({width:0},function(){
-                $(_this).children('div').eq(0).css({borderWidth:0});
+            $(this).children('div').eq(0).stop().animate({width: 150});
+            $(this).children('div').eq(1).stop().animate({height: 100});
+            $(this).children('div').eq(2).stop().animate({width: 150});
+            $(this).children('div').eq(3).stop().animate({height: 100});
+        }, function () {
+            var _this = this;
+            $(this).children('div').eq(0).stop().animate({width: 0}, function () {
+                $(_this).children('div').eq(0).css({borderWidth: 0});
             });
-            $(this).children('div').eq(1).stop().animate({height:0},function(){
-                $(_this).children('div').eq(1).css({borderWidth:0});
+            $(this).children('div').eq(1).stop().animate({height: 0}, function () {
+                $(_this).children('div').eq(1).css({borderWidth: 0});
             });
-            $(this).children('div').eq(2).stop().animate({width:0},function(){
-                $(_this).children('div').eq(2).css({borderWidth:0});
+            $(this).children('div').eq(2).stop().animate({width: 0}, function () {
+                $(_this).children('div').eq(2).css({borderWidth: 0});
             });
-            $(this).children('div').eq(3).stop().animate({height:0},function(){
-                $(_this).children('div').eq(3).css({borderWidth:0});
+            $(this).children('div').eq(3).stop().animate({height: 0}, function () {
+                $(_this).children('div').eq(3).css({borderWidth: 0});
             });
         })
 
         //轮播图显示
         // $('#carousel-example-generic').css({marginLeft:-($('#carousel-example-generic').width()/2)})
         // $('#carousel-example-generic').css({marginTop:-($('#carousel-example-generic').height()/2)})
-        window.onscroll=function() {
-            if ($(document).scrollTop()>($('#content_one').offset().top-300)) {
-                doMove($('#carousel-example-generic').get(0),{left:0})
+        window.onscroll = function () {
+            if ($(document).scrollTop() > ($('#content_one').offset().top - 500)) {
+                doMove($('#carousel-example-generic').get(0), {left: 0})
+            }
+
+            //图片懒加载
+            var aImg = document.getElementsByTagName('img');
+            for (var i = 0; i < aImg.length; i++) {
+                var oClientH = document.documentElement.clientHeight;
+                var oScrollT = document.documentElement.scrollTop || document.body.scrollTop;
+                if (oClientH + oScrollT > getPos(aImg[i]).top) {
+                    aImg[i].src = aImg[i].getAttribute('_src');
+                }
             }
         };
-
-
-
     })();
+
 
 
     //小猫
@@ -299,18 +310,19 @@ $(function(){
 
     })();
     //穿墙效果展示js
-    (function(){
-        function getPos(obj){
-            var l = 0;
-            var t = 0;
-            while(obj){
-                l += obj.offsetLeft;
-                t += obj.offsetTop;
+    function getPos(obj){
+        var l = 0;
+        var t = 0;
+        while(obj){
+            l += obj.offsetLeft;
+            t += obj.offsetTop;
 
-                obj = obj.offsetParent;
-            }
-            return {left:l,top:t};
+            obj = obj.offsetParent;
         }
+        return {left:l,top:t};
+    }
+
+    (function(){
 
         function getDir(obj,ev){
             var oColPos=document.getElementById('col_pos');
@@ -392,9 +404,9 @@ $(function(){
         $('.contect_form input, #message').blur(function(){
             $(this).css('boxShadow','');
         });
+    })();
 
 
-    })()
 
 })
 
