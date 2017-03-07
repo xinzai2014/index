@@ -140,10 +140,10 @@ $(function(){
 
             //图片懒加载
             var aImg = document.getElementsByTagName('img');
-            for (var i = 0; i < aImg.length; i++) {
+            for (var i = 1; i < aImg.length; i++) {
                 var oClientH = document.documentElement.clientHeight;
                 var oScrollT = document.documentElement.scrollTop || document.body.scrollTop;
-                if (oClientH + oScrollT > getPos(aImg[i]).top) {
+                if (oClientH + oScrollT > getPos(aImg[i]).top-200) {
                     aImg[i].src = aImg[i].getAttribute('_src');
                 }
             }
